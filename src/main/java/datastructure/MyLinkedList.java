@@ -123,4 +123,42 @@ public class MyLinkedList {
         return false;
     }
 
+    /**
+     * Two points technique
+     * Given a linked list, determine if it has a cycle in it.
+     */
+    public boolean hasCycleTwoPointTechnique(MyLinkedList head) {
+        if (head == null) {
+            return false;
+        }
+        MyLinkedList slow = head.next;
+        MyLinkedList fast = head.next.next;
+
+        while (slow != fast) {
+            if (slow == null || fast == null) {
+                return false;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return true;
+    }
+
+    public MyLinkedList detectCycle(MyLinkedList head) {
+        if (head == null) {
+            return null;
+        }
+        Set<MyLinkedList> storage = new HashSet<>();
+        storage.add(head);
+        while (head.next != null) {
+            if (storage.contains(head.next)) {
+                return head.next;
+            } else {
+                storage.add(head.next);
+            }
+            head.next = head.next.next;
+        }
+        return null;
+    }
+
 }

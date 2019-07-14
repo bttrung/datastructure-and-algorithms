@@ -22,7 +22,7 @@ public class Contest144Test {
         int[][] bookings = {{1, 2, 10}, {2, 3, 20}, {2, 5, 25}};
         int[] ints = contest144.corpFlightBookings(bookings, 5);
         int[] ans = {10, 55, 45, 25, 25};
-        Assert.assertEquals(Arrays.toString(ans), Arrays.toString(ints));
+        assertEquals(Arrays.toString(ans), Arrays.toString(ints));
     }
 
 }
