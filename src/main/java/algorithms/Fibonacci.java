@@ -17,6 +17,14 @@ public class Fibonacci {
     }
 
     public BigInteger betterSolution(int n) {
+        if (n == 0) {
+            return BigInteger.ZERO;
+        }
+
+        if (n == 1) {
+            return BigInteger.ONE;
+        }
+
         BigInteger[] results = new BigInteger[n + 1];
         results[0] = BigInteger.ZERO;
         results[1] = BigInteger.ONE;
